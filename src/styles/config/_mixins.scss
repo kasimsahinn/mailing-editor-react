@@ -1,0 +1,194 @@
+@use 'sass:math';
+
+@mixin bp($point) {
+  @if $point==desktop-l {
+    @media (max-width: 1919px) {
+      @content;
+    }
+  } @else if $point==r-desktop-l {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  } @else if $point==desktop-ml {
+    @media (max-width: 1660px) {
+      @content;
+    }
+  } @else if $point==desktop-m {
+    @media (max-width: 1529px) {
+      @content;
+    }
+  } @else if $point==r-desktop-m {
+    @media (min-width: 1530px) {
+      @content;
+    }
+  } @else if $point==r-laptop-l {
+    @media (min-width: 1441px) {
+      @content;
+    }
+  } @else if $point==laptop-l {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  } @else if $point==laptop-xl {
+    @media (max-width: 1540px) {
+      @content;
+    }
+  } @else if $point==laptop {
+    @media (max-width: 1367px) {
+      @content;
+    }
+  } @else if $point==r-laptop-s {
+    @media (min-width: 1350px) {
+      @content;
+    }
+  } @else if $point==laptop-s {
+    @media (max-width: 1349px) {
+      @content;
+    }
+  } @else if $point==r-desktop {
+    @media (min-width: 1201px) {
+      @content;
+    }
+  } @else if $point==desktop {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $point==nav {
+    @media (max-width: 900px) {
+      @content;
+    }
+  } @else if $point==r-nav {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $point==tablet-big {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point==tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point==mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point==r-desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point==r-tablet {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  } @else if $point==ipad-vertical {
+    @media (min-width: 768px) and (max-width: 768px) {
+      @content;
+    }
+  } @else if $point==r-mobile {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point==mobile-medium {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $point==mobile-small {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $point==mobile-l-small {
+    @media (max-width: 429px) {
+      @content;
+    }
+  } @else if $point==mobile-m-small {
+    @media (max-width: 374px) {
+      @content;
+    }
+  } @else if $point==mobile-x-small {
+    @media (max-width: 350px) {
+      @content;
+    }
+  }
+}
+
+@mixin text($size: 16, $weight: 400, $color: null, $transform: null, $height: null) {
+  font-size: math.div($size, $base-fontsize) * 1rem;
+
+  @if $weight != null or $weight != 400 {
+    font-weight: $weight;
+  }
+
+  @if $color != null {
+    color: $color;
+  }
+
+  @if $height != null {
+    line-height: $height;
+  }
+
+  @if ($transform != null) {
+    text-transform: $transform;
+  }
+}
+
+@mixin ellipse($num-lines: 1) {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @if $num-lines > 1 {
+    @supports (-webkit-line-clamp: $num-lines) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: initial;
+      display: -webkit-box;
+      -webkit-line-clamp: $num-lines;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+@mixin placeholder {
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin flex($direction: null, $align: null, $justify: null, $type: "block") {
+  @if $type == "block" {
+    display: flex;
+  }
+
+  @if $type == "inline" {
+    display: inline-flex;
+  }
+
+  @if $direction != null {
+    flex-direction: $direction;
+  }
+
+  @if $align != null {
+    align-items: $align;
+  }
+
+  @if $justify != null {
+    justify-content: $justify;
+  }
+}
+
+@mixin truncateText($lineCount) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lineCount;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+}

@@ -1,0 +1,54 @@
+/* BASE */
+$base-fontsize: 16;
+
+/* MULTIPLIERS */
+
+$multipler: (
+  320px: 0.8,
+  375px: 1,
+  429px: 1,
+  560px: 1,
+  768px: 1,
+  1024px: 0.7,
+  1280px: 0.75,
+  1366px: 0.75,
+  1440px: 1,
+  1600px: 1.1,
+  1728px: 1.1,
+  1920px: 1.15,
+  2560px: 1.2,
+);
+
+// Color
+$c-first: #181F22;
+$c-second: #F04444;
+$c-bg: #181F22;
+$c-white: #ffffff;
+$c-text: #ffffff;
+$c-red: #D10000;
+
+$c-overlay: transparent linear-gradient(180deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box;
+$c-gradient-red: linear-gradient(58deg, #FD6F6F 0%, #FB2222 100%);
+
+
+// Transition
+$transition: 0.15s ease-in-out;
+$transition-cubic: 0.2s cubic-bezier(0.21, 1.09, 1, 0.99);
+$transition-cubic2: 0.3s cubic-bezier(0.21, 1.09, 1, 0.99);
+$transition-cubic3: 0.4s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+$transition-fast: 0.1s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+
+
+// Font Weight
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-heavy: 800;
+
+/* Font Families*/
+$font-family-base: "Poppins" , sans-serif;
+
+$container-width: 1440;
+$container-width-2: 1250;

@@ -1,0 +1,6 @@
+@use "sass:math";
+
+/* RESPONSIVE SIZING UTILITY */
+@function rem($size) {
+  @return math.div($size, $base-fontsize) * 1rem;
+}
